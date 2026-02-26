@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebScan Professional - Advanced Security Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>WEBSCAN<span>Professional</span></h1>
+            </div>
+            <div class="header-right">
+                <div class="tools-badge">
+                    Nmap | Nikto | WhatWeb | Curl
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Email Verification Section -->
+            <section class="email-section glass-effect">
+                <h2>Gmail Verification</h2>
+                <div class="input-group">
+                    <input type="email" id="gmail" placeholder="your.email@gmail.com" 
+                           pattern="[a-zA-Z0-9._%+-]+@gmail\.com$">
+                    <button id="verifyEmail" class="btn-primary">Verify & Continue</button>
+                </div>
+                <div id="emailStatus" class="status-message"></div>
+            </section>
+
+            <!-- Scanner Selection Section -->
+            <section class="scanner-section glass-effect" style="display: none;">
+                <h2>Select Scan Type</h2>
+                <div class="scanner-grid">
+                    <div class="scanner-card" data-type="1">
+                        <div class="scanner-icon all-scanner"></div>
+                        <h3>All Scanners</h3>
+                        <p>Complete security assessment using all tools</p>
+                        <span class="scanner-tag">Comprehensive</span>
+                    </div>
+                    <div class="scanner-card" data-type="2">
+                        <div class="scanner-icon nmap"></div>
+                        <h3>Nmap</h3>
+                        <p>Network mapping and port scanning</p>
+                        <span class="scanner-tag">Network</span>
+                    </div>
+                    <div class="scanner-card" data-type="3">
+                        <div class="scanner-icon nikto"></div>
+                        <h3>Nikto</h3>
+                        <p>Web server vulnerability scanner</p>
+                        <span class="scanner-tag">Web</span>
+                    </div>
+                    <div class="scanner-card" data-type="4">
+                        <div class="scanner-icon curl"></div>
+                        <h3>Curl</h3>
+                        <p>HTTP header and security analysis</p>
+                        <span class="scanner-tag">HTTP</span>
+                    </div>
+                    <div class="scanner-card" data-type="5">
+                        <div class="scanner-icon whatweb"></div>
+                        <h3>WhatWeb</h3>
+                        <p>Technology fingerprinting</p>
+                        <span class="scanner-tag">Detection</span>
+                    </div>
+                    <div class="scanner-card exit-card" data-type="6">
+                        <div class="scanner-icon exit"></div>
+                        <h3>EXIT</h3>
+                        <p>Close the application</p>
+                        <span class="scanner-tag danger">Exit</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Target Input Section -->
+            <section class="target-section glass-effect" style="display: none;">
+                <h2>Target Information</h2>
+                <div class="input-group">
+                    <input type="text" id="target" placeholder="Enter URL or IP address (e.g., example.com or 192.168.1.1)">
+                    <button id="startScan" class="btn-scan">Start Security Scan</button>
+                </div>
+                <div class="target-examples">
+                    <span class="example">example.com</span>
+                    <span class="example">192.168.1.1</span>
+                    <span class="example">https://example.com</span>
+                </div>
+            </section>
+
+            <!-- Scanner Status Section -->
+            <section class="status-section glass-effect" style="display: none;">
+                <h2>Scanner Status</h2>
+                <div id="scannerStatus" class="status-grid">
+                    <!-- Scanner status will be populated here -->
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section glass-effect" style="display: none;">
+                <h2>Scan Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="scanProgress" style="width: 0%"></div>
+                </div>
+                <div id="scanStatus" class="scan-status">Initializing...</div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section glass-effect" style="display: none;">
+                <h2>Scan Results</h2>
+                <div id="results" class="results-container">
+                    <!-- Results will be displayed here -->
+                </div>
+                <div class="results-actions">
+                    <button id="downloadReport" class="btn-secondary">Download Professional Report</button>
+                    <button id="newScan" class="btn-primary">New Scan</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>WebScan Professional v1.0 | Advanced Security Assessment Tool</p>
+            <p class="small">Professional-grade vulnerability scanning with comprehensive reporting</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
